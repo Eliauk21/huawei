@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/icon/iconfont.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/lib/require.js" data-main="/js/index.js"></script>
+</head>
+<body>
+    @include('head.html',{isShow:true})
+    @include('banner.html')
+    <main>
+        <div class="w">
+            <ul class="goods">
+                <li class="active l">手机</li>
+                <li class="l">笔记本</li>
+                <li class="l">平板</li>
+            </ul>
+            <div class="goods-container">
+                <ul class="goods-phone show">
+                    <!-- <li class="l">
+                        <a href="">
+                            <img src="https://res0.vmallres.com/pimages//product/6901443331109/428_428_9DF9BF94A5C5575108AF27F42DEEA8415F70E58F97882DEDmp.png" alt="">
+                            <h2>华为</h2>
+                            <p>折叠万象</p>
+                            <p>￥8988</p>
+                            <span>赠送积分</span>
+                        </a>
+                    </li> -->
+                </ul>
+                <ul class="goods-book"></ul>
+                <ul class="goods-pad"></ul>
+            </div>
+            
+        </div>
+    </main>
+    @include('foot.html')
+</body>
+</html>

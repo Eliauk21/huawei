@@ -1,0 +1,37 @@
+header{
+    height: 36px;
+    background-color: black;
+    ul{
+        width: 600px;
+        height: 36px;
+        line-height: 36px;
+        li{
+            position: relative;
+            a{
+                color: #FFFFFF99;  
+                border-right: 1px solid #FFFFFF99;
+                padding: 0 8px;
+
+            }
+            &:last-child a{
+                border: none;
+            }
+            &:hover{
+                a{
+                    color: #fff;
+                }
+            }
+            .tag{
+                display: none;
+                position: absolute;
+                top: 36px;
+                right: 0;
+            }
+            &:hover{
+                .tag{
+                    display: block;
+                }
+            }
+        }
+    }
+}
