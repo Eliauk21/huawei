@@ -19,7 +19,7 @@
       <li class="l"><a href="">V码(优购码)</a></li>
       <li class="l"><a href="">企业购</a></li>
       <li class="l"><a href="">Select Region</a></li>
-      <li class="l">
+      <li class="l tagLi">
         <a href="">更多精彩</a>
         <ul class="tag">
           <li><a href="">HarmonyOS</a></li>
@@ -29,21 +29,20 @@
         </ul>
       </li>
     </ul>
-
     
     <ul class="l">
       <li class="l"><a href="">请登录 注册</a></li>
       <li class="l"><a href="">我的订单</a></li>
-      <li class="l">
+      <li class="l tagLi">
         <a href="">客服</a>
         <ul class="tag">
           <li><a href="">服务中心</a></li>
           <li><a href="">练习客服</a></li>
         </ul>
       </li>
-      <li class="l">
+      <li class="l tagLi">
         <a href="">网站导航</a>
-        <ul class="tag">
+        <ul class="tag tag-nav">
           <ul class="l">
             <li><a href="">商城首页</a></li>
           </ul>
@@ -55,27 +54,27 @@
             <li><a href="">HarmonyOS</a></li>
           </ul>
           <ul class="l">
-            <li><a href="">产品</a></li>
-            <li><a href="">手机</a></li>
-            <li><a href="">笔记本</a></li>
-            <li><a href="">平板</a></li>
-            <li><a href="">智能穿戴</a></li>
-            <li><a href="">智能家居</a></li>
-            <li><a href="">智慧屏</a></li>
-            <li><a href="">耳机音箱</a></li>
-            <li><a href="">热销配件</a></li>
-            <li><a href="">生态产品</a></li>
-            <li><a href="">增值服务</a></li>
+            <li class="l"><a href="">产品</a></li>
+            <li class="l"><a href="">手机</a></li>
+            <li class="l"><a href="">笔记本</a></li>
+            <li class="l"><a href="">平板</a></li>
+            <li class="l"><a href="">智能穿戴</a></li>
+            <li class="l"><a href="">智能家居</a></li>
+            <li class="l"><a href="">智慧屏</a></li>
+            <li class="l"><a href="">耳机音箱</a></li>
+            <li class="l"><a href="">热销配件</a></li>
+            <li class="l"><a href="">生态产品</a></li>
+            <li class="l"><a href="">增值服务</a></li>
           </ul>
           <ul class="l">
-            <li><a href="">增值服务</a></li>
-            <li><a href="">以旧换新</a></li>
-            <li><a href="">补购保障</a></li>
-            <li><a href="">一口价电池</a></li>
-            <li><a href="">音频延保</a></li>
-            <li><a href="">穿戴延保</a></li>
-            <li><a href="">智慧屏全质保</a></li>
-            <li><a href="">活动公告</a></li>
+            <li class="l"><a href="">增值服务</a></li>
+            <li class="l"><a href="">以旧换新</a></li>
+            <li class="l"><a href="">补购保障</a></li>
+            <li class="l"><a href="">一口价电池</a></li>
+            <li class="l"><a href="">音频延保</a></li>
+            <li class="l"><a href="">穿戴延保</a></li>
+            <li class="l"><a href="">智慧屏全质保</a></li>
+            <li class="l"><a href="">活动公告</a></li>
           </ul>
           <ul class="l">
             <li><a href="">会员</a></li>
@@ -83,7 +82,7 @@
           </ul>
         </ul>
       </li>
-      <li class="l">
+      <li class="l tagLi">
         <a href="">手机版</a>
         <ul class="tag">
           <li></li>
@@ -97,7 +96,28 @@
 </header>
 
 
-    hello cart 
+    <div id="shoppingList">
+        <div class="head">
+            <span><input type="checkbox">全选</span><span>商品</span><span>单价</span><span>数量</span><span>小计</span><span>操作</span>
+        </div>
+        <ul>
+            <!-- <li>
+                <span><input type="checkbox"></span>
+                <span>华为</span>
+                <span>￥7900.00</span>
+                <span class="num"><button class="sub">-</button><input type="text" value="1"><button class="add">+</button></span>
+                <span>￥7900.00</span>
+                <span>删除</span>
+            </li> -->
+        </ul>
+        <div class="foot">
+            <button class="r">立即结算</button>
+            <div class="r">
+                <p>总计￥<span class="total">0</span>.00</p>
+                <p>已选择<span class="numAll">0</span>件商品</p>
+            </div>
+        </div>
+    </div>
     <footer>
     <div class="w">
         <ul>

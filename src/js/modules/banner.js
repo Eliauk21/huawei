@@ -16,19 +16,42 @@ define(['jquery'], function($){
             }
         </ol>
         `);
+
+        let $ul = $('.banner-ul');
+        let $olLis = $('.banner-ol li');
+        let timer;
+        let num = 0;
+        let temp = 1;
         bindBanner();
+        autoBanner();
+
+        function bindBanner(){
+            $olLis.each(function(i,elem){
+                $(elem).on('mouseover',function(){
+                    clearInterval(timer);
+                    $(this).addClass('active').siblings().removeClass('active');
+                    $ul.stop().animate({left:(-1536) * $(this).index()},500,'linear');
+                })
+                .on('mouseout',function(){
+                    num =  $(this).index();
+                    autoBanner();
+                })
+            })
+        }
+    
+        function autoBanner(){
+            timer = setInterval(function(){
+                if(num===0){
+                    temp = 1;
+                }else if(num===$olLis.length-1){
+                    temp = -1;
+                }
+                num = num+temp;
+                $ul.stop().animate({left:(-1536) * num},1000,'linear');
+                $olLis.eq(num).addClass('active').siblings().removeClass('active');
+            },2000)
+        }
     }
 
-    
-    function bindBanner(){
-        $ul = $('.banner-ul');
-        $olLis = $('.banner-ol li');
-        $olLis.each(function(i,elem){
-            $(elem).on('mouseover',function(){
-                $(this).addClass('active').siblings().removeClass('active');
-                $ul.stop().animate({left:(-1536) * $(this).index()},500,'linear');
-            })
-        })
-    }
     return initBanner;
 });

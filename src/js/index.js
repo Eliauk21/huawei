@@ -4,6 +4,7 @@ requirejs.config({
     }
 });
 
+
 //相对地址是根据index.html来找的，因为index.html引入的这个主模块
 //最好别用相对，太麻烦
 define(['jquery','/js/modules/banner.js','/api/server.js'], function($,initBanner,{bannerData,goodsData}){
@@ -32,7 +33,7 @@ define(['jquery','/js/modules/banner.js','/api/server.js'], function($,initBanne
                 data.goods_list.map((v)=>{
                     return `
                     <li class="l">
-                        <a href="/view/detail.html?goodsType=${data.type}$goodsId:${v.goodsId}" target="_blank">
+                        <a href="/view/detail.html?goodsId=${v.goodsId}&type=${data.type}" target="_blank">
                             <img src=${v.goodsImg}>
                             <h2>${v.goodsName}</h2>
                             <p>折叠万象</p>
@@ -53,5 +54,12 @@ define(['jquery','/js/modules/banner.js','/api/server.js'], function($,initBanne
             $(this).addClass('active').siblings().removeClass('active');
             $goodsUl.eq( $(this).index()).addClass('show').siblings().removeClass('show');
         })
+    })
+
+
+    //搜索框
+    $sousuo = $('nav .iconfont');
+    $sousuo.on('click',function(){
+        
     })
 });

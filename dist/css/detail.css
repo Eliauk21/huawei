@@ -21,7 +21,6 @@ body {
   color: #00000080;
   font-size: 13px;
   font-family: "微软雅黑";
-  /* overflow-x: hidden; */
 }
 
 a {
@@ -46,6 +45,17 @@ a:hover {
   float: right;
 }
 
+@font-face {
+  font-family: "iconfont";
+  src: url("../static/icon/font/iconfont.ttf?t=1642658059551") format("truetype");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 header {
   height: 36px;
   background-color: black;
@@ -54,9 +64,6 @@ header ul {
   width: 600px;
   height: 36px;
   line-height: 36px;
-}
-header ul li {
-  position: relative;
 }
 header ul li a {
   color: #FFFFFF99;
@@ -69,13 +76,54 @@ header ul li:last-child a {
 header ul li:hover a {
   color: #fff;
 }
-header ul li .tag {
+header ul .tagLi {
+  position: relative;
+}
+header ul .tagLi .tag {
   display: none;
   position: absolute;
+  z-index: 12;
   top: 36px;
-  right: 0;
+  left: -50px;
 }
-header ul li:hover .tag {
+header ul .tagLi .tag li {
+  width: 150px;
+  text-align: center;
+  background-color: #fff;
+}
+header ul .tagLi .tag li a {
+  color: #ccc;
+}
+header ul .tagLi .tag li:hover a {
+  color: #CF0A2C;
+}
+header ul .tagLi .tag-nav {
+  left: -500px;
+  width: 1050px;
+  height: 280px;
+  padding-top: 20px;
+  background-color: #fff;
+}
+header ul .tagLi .tag-nav ul {
+  width: 150px;
+  height: 240px;
+}
+header ul .tagLi .tag-nav ul li:nth-child(1) {
+  margin-right: 150px;
+  font-size: 20px;
+}
+header ul .tagLi .tag-nav ul li:nth-child(1) a {
+  color: black;
+}
+header ul .tagLi .tag-nav ul:nth-child(4) {
+  width: 300px;
+  height: 240px;
+}
+header ul .tagLi .tag-nav ul:nth-child(3) {
+  width: 300px;
+  height: 240px;
+}
+header ul .tagLi:hover ul {
   display: block;
 }
 
@@ -162,14 +210,19 @@ footer .w .bottom .bottom-center p {
 
 #banner {
   position: relative;
-  width: 1536px;
+  width: 1520px;
   height: 550px;
+  overflow: hidden;
 }
 #banner .banner-ul {
   width: 6144px;
   height: 550px;
   overflow: hidden;
   position: absolute;
+}
+#banner .banner-ul img {
+  width: 1536px;
+  height: 550px;
 }
 #banner .banner-ul li {
   width: 1536px;
@@ -193,4 +246,104 @@ footer .w .bottom .bottom-center p {
 }
 #banner .banner-ol .active {
   background-color: burlywood;
+}
+
+#detail {
+  height: 700px;
+  width: 1000px;
+  margin: 40px auto;
+  position: relative;
+}
+#detail .detail-img-container {
+  width: 450px;
+  height: 450px;
+  margin-right: 20px;
+  position: relative;
+  text-align: center;
+}
+#detail .detail-img-container img {
+  height: 100%;
+}
+#detail .detail-img-container span {
+  content: "";
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(216, 71, 71, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#detail .detail-bigImg-container {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  left: 420px;
+}
+#detail .detail-bigImg-container img {
+  height: 600px;
+  position: absolute;
+}
+#detail .detail-artical {
+  margin-top: 80px;
+}
+#detail .detail-artical h2 {
+  height: 32px;
+  font-size: 21px;
+}
+#detail .detail-artical p {
+  vertical-align: center;
+}
+#detail .detail-artical p:nth-of-type(1) {
+  margin: 30px 0 10px;
+  font-size: 17px;
+}
+#detail .detail-artical p:nth-of-type(1) span {
+  color: #CF0A2C;
+  font-size: 26px;
+}
+#detail .detail-artical p:nth-of-type(2) {
+  height: 70px;
+  line-height: 70px;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+#detail .detail-artical p:nth-of-type(2) span {
+  margin-right: 20px;
+}
+#detail .detail-artical p:nth-of-type(2) span:nth-of-type(1) {
+  margin-left: 20px;
+}
+#detail .detail-artical p:nth-of-type(2) .active {
+  border: 2px solid #CF0A2C;
+}
+#detail .detail-artical .container {
+  height: 50px;
+  width: 300px;
+  overflow: hidden;
+}
+#detail .detail-artical .container-num {
+  width: 62px;
+  height: 42px;
+}
+#detail .detail-artical .container-num input {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+#detail .detail-artical .container-num button {
+  width: 20px;
+  height: 20px;
+}
+#detail .detail-artical .container > button {
+  margin: 10px 20px 0;
+}
+#detail .detail-artical .container > button:nth-of-type(1) {
+  background-color: #cf8a0a;
+}
+#detail .detail-artical .container > button:nth-of-type(2) {
+  background-color: #CF0A2C;
 }

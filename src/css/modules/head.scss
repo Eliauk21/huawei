@@ -6,7 +6,6 @@ header{
         height: 36px;
         line-height: 36px;
         li{
-            position: relative;
             a{
                 color: #FFFFFF99;  
                 border-right: 1px solid #FFFFFF99;
@@ -21,14 +20,59 @@ header{
                     color: #fff;
                 }
             }
+        }
+        .tagLi{
+            position: relative;
             .tag{
                 display: none;
                 position: absolute;
+                z-index: 12;
                 top: 36px;
-                right: 0;
+                left: -50px;
+                li{
+                    width: 150px;
+                    text-align: center;
+                    background-color: #fff;
+                    a{
+                        color: #ccc;
+                    }
+                    &:hover{
+                        a{
+                            color: #CF0A2C;
+                        }
+                    }
+                }
+                &-nav{
+                    left: -500px;
+                    width: 1050px;
+                    height: 280px;
+                    padding-top: 20px;
+                    background-color: #fff;
+                    ul{
+                        width: 150px;
+                        height: 240px;
+                        li{
+                            &:nth-child(1){
+                                margin-right: 150px;
+                                font-size: 20px;
+                                a{
+                                    color: black;
+                                }
+                            }
+                        }
+                        &:nth-child(4){
+                            width: 300px;
+                            height: 240px;
+                        }
+                        &:nth-child(3){
+                            width: 300px;
+                            height: 240px;
+                        }
+                    }
+                }
             }
             &:hover{
-                .tag{
+                ul{
                     display: block;
                 }
             }

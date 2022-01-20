@@ -11,7 +11,28 @@
 </head>
 <body>
     @include('head.html', { isShow: false })
-    hello cart 
+    <div id="shoppingList">
+        <div class="head">
+            <span><input type="checkbox">全选</span><span>商品</span><span>单价</span><span>数量</span><span>小计</span><span>操作</span>
+        </div>
+        <ul>
+            <!-- <li>
+                <span><input type="checkbox"></span>
+                <span>华为</span>
+                <span>￥7900.00</span>
+                <span class="num"><button class="sub">-</button><input type="text" value="1"><button class="add">+</button></span>
+                <span>￥7900.00</span>
+                <span>删除</span>
+            </li> -->
+        </ul>
+        <div class="foot">
+            <button class="r">立即结算</button>
+            <div class="r">
+                <p>总计￥<span class="total">0</span>.00</p>
+                <p>已选择<span class="numAll">0</span>件商品</p>
+            </div>
+        </div>
+    </div>
     @include('foot.html')
 </body>
 </html>

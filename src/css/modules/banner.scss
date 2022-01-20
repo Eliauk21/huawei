@@ -1,12 +1,17 @@
 #banner{
     position: relative;
-    width: 1536px;
+    width: 1520px;
     height: 550px;
+    overflow: hidden;
     .banner-ul{
         width: 6144px;
         height: 550px;
         overflow: hidden;
         position: absolute;
+        img{
+            width: 1536px;
+            height: 550px;
+        }
         li{
             width: 1536px;
             height: 550px;

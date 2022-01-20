@@ -1,3 +1,80 @@
-@import '/modules/common.scss';
-@import '/modules/head.scss';
-@import '/modules/foot.scss';
+@import './modules/common.scss';
+@import './modules/head.scss';
+@import './modules/foot.scss';
+
+#shoppingList{
+    height: 700px;
+    background-color: #ccc;
+    overflow: hidden;
+    span{
+        display: inline-block;
+        width: 170px;
+        /* height: 50px; */
+        &:nth-child(1){
+            width: 100px;
+            text-align: center;
+        }
+    }
+    
+    .head{
+        width: 1000px;height: 50px;
+        line-height: 50px;
+        background-color: #fff;
+        margin: 20px auto;
+    }
+    ul{
+        li{
+            width: 1000px;height: 50px;
+            line-height: 50px;
+            background-color: #fff;
+            margin: 20px auto;
+        }
+    }
+    .foot{
+        width: 1000px;height: 50px;
+        line-height: 50px;
+        background-color: #fff;
+        margin: 20px auto;
+        div{
+            height: 50px;
+            width: 150px;
+            p{
+                width: 150px;
+                height: 25px;
+                line-height: 25px;
+                span{
+                    display: inline;
+                }
+            }
+        }
+        &>button{
+            width: 100px;
+            height: 50px;
+            border: none;
+            background-color: #CF0A2C;
+        }
+    }
+    .num{
+        button{
+            background-color: #fff;
+            border: none;
+            box-sizing: content-box;
+        }
+        .add{
+            width: 8px;
+            height: 20px;
+        }
+        .sub{
+            width: 8px;
+            height: 20px;
+        }
+        input{
+            width: 20px;
+            height: 13px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+    }
+}
+
+
