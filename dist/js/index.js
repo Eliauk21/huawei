@@ -48,7 +48,6 @@ define(['jquery','/js/modules/banner.js','/api/server.js'], function($,initBanne
     }
 
     $goodsUl = $('.goods-container ul');
-    console.log($goodsUl);
     $('.goods li').each((i,elem)=>{
         $(elem).on('click',function(){
             $(this).addClass('active').siblings().removeClass('active');
@@ -58,8 +57,83 @@ define(['jquery','/js/modules/banner.js','/api/server.js'], function($,initBanne
 
 
     //搜索框
-    $sousuo = $('nav .iconfont');
+    let $sousuo = $('nav .fir .iconfont');
+    let $fir = $('nav .fir');
+    let $sec = $('nav .sec');
+    let $input = $('nav .sec .input');
+    let $del = $('nav .sec .del');
+    /* let $container = $('nav .w'); */
     $sousuo.on('click',function(){
+        $fir.css('display','none');
+        $sec.css({
+            display:'block',
+            /* marginLeft:-266 */
+        });
+        $sec.animate({left:350,opacity:1},1000,'linear');
+
+
+        let val = $input.val();     //提示词
+        let nowValue;       //失去焦点时value值
+        let $ul = $('nav .sec ul');
+        let historys;
+
+        //表单获取焦点事件
+        $input.on('focus',function(){
+            if(nowValue === val){
+                $input.val(val);
+            }else{
+                $input.val('');
+            }
+            $input.css('color','black');
+
+            $sec.css({
+                borderRadius:0,
+                borderTopLeftRadius: 20,
+                borderTopRightRadius: 20
+            })
+            $ul.css('display','block');
+        })
         
+        //表单失去焦点事件
+        $input.on('blur',function(){
+            nowValue = $input.val(); 
+            if((nowValue === val)||(nowValue === '')){
+                $input.val(val);
+            }else{
+                $input.val(nowValue);
+            }
+            $input.css('color','#ccc');
+
+            $sec.css({
+                borderRadius:20
+            })
+            $ul.css('display','none');
+
+            if(nowValue !== ''){
+                historys = JSON.parse(localStorage.getItem('historys')||'[]');  //取出历史记录
+                historys.push(nowValue);    //放入新数据
+                let lists = [];     //去重
+                for(i=0;i<historys.length;i++){
+                    if(!lists.includes(historys[i])){
+                        lists.unshift(historys[i]);
+                    }
+                }
+                $ul.html(`${    //将历史记录渲染到页面
+                    lists.map((v)=>{
+                        return `<li>${v}</li>`;
+                    }).join('')
+                }`);
+                localStorage.setItem('historys',JSON.stringify(lists));     //将去重后的数组存入历史记录
+            }
+        })
+
+        $del.on('click',function(){
+            $sec.css({
+                display:'none',
+                left: 999,
+                opacity:0
+            });
+            $fir.css('display','block');
+        })
     })
 });

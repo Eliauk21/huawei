@@ -10,14 +10,24 @@ header{
                 color: #FFFFFF99;  
                 border-right: 1px solid #FFFFFF99;
                 padding: 0 8px;
-
-            }
-            &:last-child a{
-                border: none;
             }
             &:hover{
                 a{
                     color: #fff;
+                }
+            }
+        }
+        &:nth-of-type(1){
+            li{
+                &:last-child a{
+                    border: none;
+                }
+            }
+        }
+        &:nth-of-type(2){
+            li{
+                &:first-child a{
+                    border: none;
                 }
             }
         }
@@ -43,7 +53,7 @@ header{
                     }
                 }
                 &-nav{
-                    left: -500px;
+                    left: -800px;
                     width: 1050px;
                     height: 280px;
                     padding-top: 20px;

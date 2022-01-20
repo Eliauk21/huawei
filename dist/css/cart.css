@@ -45,17 +45,6 @@ a:hover {
   float: right;
 }
 
-@font-face {
-  font-family: "iconfont";
-  src: url("../static/icon/font/iconfont.ttf?t=1642658059551") format("truetype");
-}
-.iconfont {
-  font-family: "iconfont" !important;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 header {
   height: 36px;
   background-color: black;
@@ -70,11 +59,14 @@ header ul li a {
   border-right: 1px solid #FFFFFF99;
   padding: 0 8px;
 }
-header ul li:last-child a {
-  border: none;
-}
 header ul li:hover a {
   color: #fff;
+}
+header ul:nth-of-type(1) li:last-child a {
+  border: none;
+}
+header ul:nth-of-type(2) li:first-child a {
+  border: none;
 }
 header ul .tagLi {
   position: relative;
@@ -98,7 +90,7 @@ header ul .tagLi .tag li:hover a {
   color: #CF0A2C;
 }
 header ul .tagLi .tag-nav {
-  left: -500px;
+  left: -800px;
   width: 1050px;
   height: 280px;
   padding-top: 20px;

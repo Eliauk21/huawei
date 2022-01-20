@@ -79,7 +79,36 @@ function watchTask() {
   watch('./src/static/**', staticTask);
 }
 
+//转普通JS并压缩JS任务
+function uglifyTask(){
+  return src('./dist/js/**')
+          .pipe(babel({
+            presets: ['@babel/env']
+          }))
+          .pipe(uglify())
+          .pipe(dest('./dist'))
+}
+
+//压缩html任务
+function htmlminTask(){
+  return src('./dist/view/**')
+          .pipe(htmlmin({ 
+            collapseWhitespace: true,    //删除空白区域
+            minifyCSS: true   //压缩CSS 
+          }))
+          .pipe(dest('./dist'))
+}
+
+//加前缀并压缩css的任务
+function cssminTask(){
+  return src('./dist/css/**')
+          .pipe(autoprefixer())
+          .pipe(cssmin())
+          .pipe(dest('./dist'))
+}
+
 
 module.exports = {
-  dev:series(cleanTask,parallel(htmlTask,sassTask,apiTask,jsTask,libTask,staticTask),parallel(webTask, watchTask))
+  dev:series(cleanTask,parallel(htmlTask,sassTask,apiTask,jsTask,libTask,staticTask),parallel(webTask, watchTask)),
+  build:parallel(uglifyTask,htmlminTask,cssminTask)
 };
